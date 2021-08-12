@@ -9,7 +9,9 @@ const client = new CommandoClient({
 
 client.registry
     .registerDefaultTypes()
-    .registerGroups([])
+    .registerGroups([
+        ['divers', 'Divers'], // la première valeur correspond à la section 'group' de votre commande, la deuxième valeur sera utilisée pour l'affichage du nom du groupe, dans l'aide par exemple.
+    ])
     .registerCommandsIn(path.join(__dirname, 'Commandes'))
 ;
 
