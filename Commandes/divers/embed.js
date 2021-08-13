@@ -47,6 +47,8 @@ module.exports = class EmbedCommand extends Command {
 
         msg.say(embed)
         
+        const replyMsg = await msg.say(embed); // on conserve dans 'replyMsg' les informations sur message que nous venons d'envoyer
+        
             // on ajoute les réactions à notre réponse :
         replyMsg.react('❤️');
     }
