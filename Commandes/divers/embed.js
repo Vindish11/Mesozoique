@@ -51,9 +51,6 @@ module.exports = class EmbedCommand extends Command {
         
             // on ajoute les réactions à notre réponse :
         replyMsg.react('❤️');
-           // utilisation d'un emoji externe :
-        const customCatEmoji = msg.guild.emojis.cache.find(emoji => emoji.name === 'cat');
-        if (customCatEmoji) {
-             replyMsg.react(customCatEmoji);
+
     }
 };
