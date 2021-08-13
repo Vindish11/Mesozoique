@@ -45,7 +45,6 @@ module.exports = class EmbedCommand extends Command {
             .addField(`Titre 2`,`Text avec un [lien](https://mtxserv.com/fr/)`, true)
         ;
 
-        msg.say(embed)
         const replyMsg = await msg.say(embed); // on conserve dans 'replyMsg' les informations sur message que nous venons d'envoyer
 
         
