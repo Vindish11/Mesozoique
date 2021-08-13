@@ -46,5 +46,8 @@ module.exports = class EmbedCommand extends Command {
         ;
 
         msg.say(embed)
+        
+            // on ajoute les réactions à notre réponse :
+        replyMsg.react('❤️');
     }
 };
