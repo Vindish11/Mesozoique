@@ -19,8 +19,7 @@ module.exports = class EmbedCommand extends Command {
 
     async run(msg) {
         const embed = new Discord.MessageEmbed(); // création de l'embed
-        const replyMsg = await msg.say(embed); // on conserve dans 'replyMsg' les informations sur message que nous venons d'envoyer
-
+      
         embed
             .setColor(`BLUE`) // ou .setColor(`#0099ff`)
             .setTitle(`Titre du message, maximum 256 caractères`)
@@ -47,6 +46,8 @@ module.exports = class EmbedCommand extends Command {
         ;
 
         msg.say(embed)
+        const replyMsg = await msg.say(embed); // on conserve dans 'replyMsg' les informations sur message que nous venons d'envoyer
+
         
         
             // on ajoute les réactions à notre réponse :
