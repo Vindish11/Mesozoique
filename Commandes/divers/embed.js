@@ -19,7 +19,7 @@ module.exports = class EmbedCommand extends Command {
 
     async run(msg) {
         const embed = new Discord.MessageEmbed(); // création de l'embed
-      
+
         embed
             .setColor(`BLUE`) // ou .setColor(`#0099ff`)
             .setTitle(`Titre du message, maximum 256 caractères`)
@@ -27,8 +27,8 @@ module.exports = class EmbedCommand extends Command {
             // .setAuthor(`Nom de l'auteur`, `https://mtxserv.com/build/img/favicon/favicon.ico`, `https://mtxserv.com/fr/`)
             .setAuthor(`${this.client.user.tag}`, `${this.client.user.displayAvatarURL()}`, 'https://mtxserv.com/fr/')
 
-            .setDescription(`Emoji possible :t_rex:, maximum 2048 caractères`)
-            .setFooter(`Pied de page du message`, `${this.client.user.displayAvatarURL()}`)
+            .setDescription(`Message contenu dans l'embed, maximum 2048 caractères`)
+            .setFooter(`Pied de page du message`, `https://mtxserv.com/build/img/favicon/favicon.ico`)
 
             .setImage(`https://mtxserv.com/uploads/cover/creer-un-bot-discord-avec-discord-js-discord-191c77d00c4d79bf822422d6a05496bd.jpg`)
             .setThumbnail(`https://mtxserv.com/uploads/banners/ae49ad104085151cbb44e27fffd9f16862cb6f2c.png`)
@@ -45,12 +45,6 @@ module.exports = class EmbedCommand extends Command {
             .addField(`Titre 2`,`Text avec un [lien](https://mtxserv.com/fr/)`, true)
         ;
 
-        const replyMsg = await msg.say(embed); // on conserve dans 'replyMsg' les informations sur message que nous venons d'envoyer
-
-        
-        
-            // on ajoute les réactions à notre réponse :
-        replyMsg.react('❤️');
-
+        msg.say(embed)
     }
 };
