@@ -1,5 +1,12 @@
 const CommandoClient = require('./client'); // Chargement du client de Discord Commando
 const path = require('path') // on ajoute la librairie path
+const fs = require('fs')
+const dotenv = require('dotenv')
+
+const envConfig = dotenv.parse(fs.readFileSync('.env'))
+for (const k in envConfig) {
+    process.env[k] = envConfig[k]
+}
 
 const client = new CommandoClient({
 	commandPrefix: '-', // Préfixe des commandes (ex: ?help)
@@ -12,7 +19,7 @@ client.registry
     .registerGroups([
         ['divers', 'Divers'], // la première valeur correspond à la section 'group' de votre commande, la deuxième valeur sera utilisée pour l'affichage du nom du groupe, dans l'aide par exemple.
     ])
-    .registerCommandsIn(path.join(__dirname, 'Commandes'))
+    .registerCommandsIn(path.join(__dirname, 'commandes'))
 ;
 
 client.once('ready', () => {
