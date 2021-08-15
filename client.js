@@ -1,12 +1,24 @@
-const { CommandoClient } = require('discord.js-commando');
+const { CommandoClient } = require('discord.js-commando')
+const winston = require('winston')
 
-const client = new CommandoClient({
-	commandPrefix: '?', // Préfixe des commandes (ex: ?help)
-	owner: 'VOTRE_ID_UTILISATEUR', // ID de l'owner du bot, peut également etre un tableau d'id pour plusieurs owners, ex: ['ID1', 'ID2']
-        disableMentions: 'everyone' // Désactive, par sécurité, l'utilisation du everyone par le bot
-});
+module.exports = class BotClient extends CommandoClient {
+    constructor(options) {
+        super(options);
 
-client.registry
-    .registerDefaultTypes()
-    .registerGroups([])
-;
+        // initialisation du logger
+        this.logger = winston.createLogger({
+            transports: [
+                new winston.transports.Console(),
+                new winston.transports.File({ filename: 'console.log' })
+            ],
+            format: winston.format.printf((log) => `[${new Date().toLocaleString()}] - [${log.level.toUpperCase()}] - ${log.message}`)
+        });
+
+        this.on('debug', m => this.logger.log('debug', m));
+        this.on('warn', m => this.logger.log('warn', m));
+        this.on('error', m => this.logger.log('error', m));
+
+        process.on('uncaughtException', error => this.logger.log('error', error));
+    }
+};
+
