@@ -13,6 +13,7 @@
     "discord.js": "^12.5.3",
     "discord.js-commando": "github:discordjs/Commando",
     "dotenv": "^10.0.0",
+    "quick.db": "^7.1.3",
     "winston": "^3.3.3"
   }
 }
