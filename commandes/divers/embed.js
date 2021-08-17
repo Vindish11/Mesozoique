@@ -49,6 +49,7 @@ module.exports = class EmbedCommand extends Command {
 
         // on ajoute les réactions à notre réponse :
         replyMsg.react('❤️');
+        replyMsg.react('🦖');
 
     }
 };
