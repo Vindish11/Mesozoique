@@ -45,6 +45,6 @@ module.exports = class EmbedCommand extends Command {
             .addField(`Titre 2`,`Text avec un [lien](https://mtxserv.com/fr/)`, true)
         ;
         // on ajoute les réactions à notre réponse :
-        replyMsg.react('❤️');
+        embed.react('❤️');
     }
 };
