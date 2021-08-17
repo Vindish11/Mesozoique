@@ -22,7 +22,7 @@ module.exports = class EmbedCommand extends Command {
 
         embed
             .setColor(`BLUE`) // ou .setColor(`#0099ff`)
-            .setTitle(`Titre du message, maximum 256 caractères`)
+            .setTitle(`Le titre couillon, maximum 256 caractères`)
 
             // .setAuthor(`Nom de l'auteur`, `https://mtxserv.com/build/img/favicon/favicon.ico`, `https://mtxserv.com/fr/`)
             .setAuthor(`${this.client.user.tag}`, `${this.client.user.displayAvatarURL()}`, 'https://mtxserv.com/fr/')
