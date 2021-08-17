@@ -18,7 +18,8 @@ module.exports = class EmbedCommand extends Command {
     }
 
     async run(msg) {
-        const Lembed = new Discord.MessageEmbed(); // création de l'embed
+        const embed = new Discord.MessageEmbed(); // création de l'embed
+        const replyMsg = await msg.say(embed); // on conserve dans 'replyMsg' les informations sur message que nous venons d'envoyer
 
         embed
             .setColor(`BLUE`) // ou .setColor(`#0099ff`)
@@ -45,6 +46,6 @@ module.exports = class EmbedCommand extends Command {
             .addField(`Titre 2`,`Text avec un [lien](https://mtxserv.com/fr/)`, true)
         ;
         // on ajoute les réactions à notre réponse :
-        Lembed.react('❤️');
+        replyMsg.react('❤️');
     }
 };
