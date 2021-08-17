@@ -44,7 +44,5 @@ module.exports = class EmbedCommand extends Command {
             .addField(`Titre 1`,`Votre texte 1`, true)
             .addField(`Titre 2`,`Text avec un [lien](https://mtxserv.com/fr/)`, true)
         ;
-
-        msg.say(embed)
     }
 };
