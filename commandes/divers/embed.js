@@ -43,9 +43,8 @@ module.exports = class EmbedCommand extends Command {
             // Plusieurs sur une même ligne :
             .addField(`Titre 1`,`Votre texte 1`, true)
             .addField(`Titre 2`,`Text avec un [lien](https://mtxserv.com/fr/)`, true)
+        react('❤️');
         ;
-        const replyMsg = await msg.say(embed); // on conserve dans 'replyMsg' les informations sur message que nous venons d'envoyer
-        // on ajoute les réactions à notre réponse :
-        replyMsg.react('❤️');
+        
     }
 };
