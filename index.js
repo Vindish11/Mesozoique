@@ -18,6 +18,7 @@ client.registry
     .registerDefaultTypes()
     .registerGroups([
         ['divers', 'Divers'], // la première valeur correspond à la section 'group' de votre commande, la deuxième valeur sera utilisée pour l'affichage du nom du groupe, dans l'aide par exemple.
+	['banque', 'Banque'],
     ])
     .registerCommandsIn(path.join(__dirname, 'commandes'))
 ;
