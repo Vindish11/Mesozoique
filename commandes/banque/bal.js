@@ -1,5 +1,6 @@
 const { Command } = require('discord.js-commando');
 const Discord = require("discord.js");
+const db = require('quick.db');
 
 module.exports = class HelloCommand extends Command {
 	constructor(client) {
