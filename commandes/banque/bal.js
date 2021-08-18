@@ -17,6 +17,9 @@ module.exports = class HelloCommand extends Command {
 	}
 
 	async run(msg) {
-            msg.say(`Bonjour, je suis ${this.client.user.tag} (\`${this.client.user.id}\`)`);
-	}
+            msg.say('Your current balance is ' + db.get(msg.author.id + '.bal') + '.');
+    }else{
+     db.add(msg.author.id + '.bal', 0);
+     msg.channel.send('Your current balance is 0.');
+    }
 };
