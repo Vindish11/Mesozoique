@@ -28,6 +28,11 @@ client.once('ready', () => {
     console.log(`Je suis là !`);
 });
 
+client.on("ready", () => {
+  console.log(`Logged in as ${client.user.tag}!`)
+  db.set('userInfo', { bal: 0 })
+})
+
 client.on('error', console.error); // Afficher les erreurs
 
 client.login(process.env.BOT_TOKEN);
