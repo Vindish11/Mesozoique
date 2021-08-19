@@ -18,7 +18,7 @@ module.exports = class ReplyCommand extends Command {
 			        {
 			                key: 'text',
 			                prompt: 'Quel texte voulez-vous que le bot répondre ?',
-			                type: 'string',
+			                type: 'number',
 			        },
 	                ],
 		});
